@@ -1,25 +1,10 @@
-
 /// Determine the length of the collatz sequence beginning at `n`.
-fn collatz_length(mut n: i32) -> u32 {
-     
-    let mut x: u32 = 0;
-
-    loop {
-        if n == 1 {
-            x += 1;
-            break;
-        } else {
-            if n % 2 == 0 {
-                n = dbg!(n / 2);
-                x += 1;
-            } else {
-                // collatz_length(3*n + 1)
-                n = dbg!(3 * n + 1);
-                x += 1;
-            }
-        }
+fn collatz_length(mut n: u32) -> u32 {
+    let mut x: u32 = 1;
+    while n > 1 {
+        n = if n % 2 == 0 { n / 2 } else { 3 * n + 1 };
+        x += 1;
     }
-    dbg!(x);
     x
 }
 
