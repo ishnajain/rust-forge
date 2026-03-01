@@ -11,3 +11,4 @@ fn collatz_length(mut n: u32) -> u32 {
 fn main() {
     println!("Length: {}", collatz_length(11)); // should be 15
 }
+        
